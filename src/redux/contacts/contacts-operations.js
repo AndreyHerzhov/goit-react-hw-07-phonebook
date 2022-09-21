@@ -1,5 +1,8 @@
 import * as api  from "shared/api/contacts";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAction } from "@reduxjs/toolkit";
+
+export const setFilter = createAction("filter/set");
 
 export const fetchContacts = createAsyncThunk(
     "contacts/fetch",
@@ -36,12 +39,11 @@ export const addContact = createAsyncThunk(
     {
         condition: (data, {getState}) => {
             const {contacts} = getState()
-            console.log(contacts.items)
             if(isDuplicate(data, contacts.items)){
                 alert("Alert")
                 return false
             }
-            }
+          }
         }
     
 
@@ -59,3 +61,4 @@ export const removeContact = createAsyncThunk(
     }
  )
  
+

@@ -1,13 +1,10 @@
-// export const getContacts = store => store.contacts.items;
+export const getFilteredContacts = (store) => {
 
-
-export const getFilteredContacts = ({contacts, filter}) => {
- 
-    if(!filter){
-        return contacts.items;
+    if(!store.contacts.filter){
+        return store.contacts.items;
     }
-    const normalizedFilter = filter.toString().toLowerCase();
-    const result = contacts.items.filter(({name}) => {
+    const normalizedFilter = store.contacts.filter.toString().toLowerCase();
+    const result = store.contacts.items.filter(({name}) => {
         const normalizedName = name.toLowerCase();
         
         return (normalizedName.includes(normalizedFilter))
@@ -16,3 +13,4 @@ export const getFilteredContacts = ({contacts, filter}) => {
     return result;
 }
  
+export const getFilter = ({contacts}) => contacts.filter;

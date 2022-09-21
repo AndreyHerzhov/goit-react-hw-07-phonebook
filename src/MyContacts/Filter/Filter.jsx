@@ -1,16 +1,14 @@
 import { FilterLabel,FilterInput } from "./Filter.styled"
 import PropTypes from "prop-types"
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { getFilter } from "redux/filter/filter-selectors";
-import { setFilter } from "redux/filter/filter-actions";
+import { useDispatch,useSelector } from "react-redux";
+import { setFilter } from "redux/contacts/contacts-operations";
+import { getFilter } from "redux/contacts/contacts-selectors";
 
 export const Filter = () => {
         const dispatch = useDispatch()
         const filter = useSelector(getFilter)
         
         const onSetFilter = ({target}) => {
-             
                 dispatch(setFilter(target.value))
         }
 
