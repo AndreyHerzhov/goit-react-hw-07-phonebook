@@ -1,8 +1,6 @@
 import * as api  from "shared/api/contacts";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createAction } from "@reduxjs/toolkit";
 
-export const setFilter = createAction("filter/set");
 
 export const fetchContacts = createAsyncThunk(
     "contacts/fetch",

@@ -1,7 +1,7 @@
 import { FilterLabel,FilterInput } from "./Filter.styled"
 import PropTypes from "prop-types"
 import { useDispatch,useSelector } from "react-redux";
-import { setFilter } from "redux/contacts/contacts-operations";
+import { setFilter } from "redux/contacts/contacts-sclice";
 import { getFilter } from "redux/contacts/contacts-selectors";
 
 export const Filter = () => {
